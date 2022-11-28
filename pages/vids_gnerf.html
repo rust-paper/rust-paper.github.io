@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="." />
+    <meta name="keywords" content="RUST" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RUST: Supplementary material</title>
+
+    <link rel="stylesheet" href="../static/css/main.css" />
+
+    <script defer src="../static/js/fontawesome.all.min.js"></script>
+    <script src="../static/js/jquery-3.6.1.min.js"></script>
+    <script src="../static/js/handlebars-v4.7.7.js"></script>
+    <script src="../static/js/main.js"></script>
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- GNeRF. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3" id="gnerf-gifs">Videos (GNeRF)</h2>
+
+            <p>
+              Qualitative visualization for the GNeRF baseline (see Fig 9. for
+              metrics).
+            </p>
+
+            <br />
+
+            <table class="table center">
+              <thead>
+                <tr>
+                  <td colspan="2">Perfect poses</td>
+                  <td colspan="2">No poses</td>
+                </tr>
+                <tr>
+                  <td>150 views</td>
+                  <td>12 views</td>
+                  <td>150 views</td>
+                  <td>12 views</td>
+                </tr>
+              </thead>
+              <tbody id="gnerf-tbody">
+                <script id="gnerf-row" type="text/x-handlebars-template">
+                  {{#each rows}}
+                    <tr>
+                      <td><img
+                          src="../data/gnerf_gifs/ex{{ex_id}}_150im_GT_{{bg}}.gif"
+                          alt=""
+                        /></td>
+                      <td><img
+                          src="../data/gnerf_gifs/ex{{ex_id}}_12im_GT_{{bg}}.gif"
+                          alt=""
+                        /></td>
+                      <td><img
+                          src="../data/gnerf_gifs/ex{{ex_id}}_150im__{{bg}}.gif"
+                          alt=""
+                        /></td>
+                      <td><img
+                          src="../data/gnerf_gifs/ex{{ex_id}}_12im__{{bg}}.gif"
+                          alt=""
+                        /></td>
+                    </tr>
+                  {{/each}}
+                </script>
+                <script>
+                  fillTemplate({
+                    templateId: "gnerf-row",
+                    dstId: "gnerf-tbody",
+                    data: {
+                      rows: [
+                        { ex_id: "07", bg: "wBG" },
+                        { ex_id: "07", bg: "noBG" },
+                        { ex_id: "10", bg: "wBG" },
+                        { ex_id: "10", bg: "noBG" },
+                        { ex_id: "11", bg: "wBG" },
+                        { ex_id: "11", bg: "noBG" },
+                      ],
+                    },
+                  });
+                </script>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--/ GNeRF. -->
+      </div>
+    </section>
+  </body>
+</html>

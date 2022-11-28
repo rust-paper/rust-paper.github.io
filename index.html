@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="." />
+    <meta name="keywords" content="RUST" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RUST: Really Unposed SRT</title>
+ 
+    <link rel="stylesheet" href="./static/css/main.css" />
+
+
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/jquery-3.6.1.min.js"></script>
+    <script src="./static/js/handlebars-v4.7.7.js"></script>
+    <script src="./static/js/main.js"></script>
+
+  </head>
+
+
+  <body>
+
+    <div class="hero-body">
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+    <div class="column has-text-centered"> 
+
+    <div id="header"></div>
+          <center><img src="data/teaser.svg" alt="Model Overview" /><br/></center>
+
+          RUST builds on the <a target="_blank" rel="noopener noreferrer" href="https://srt-paper.github.io/">Scene Representation Transformer (SRT)</a>.
+          Contrary to prior methods, it does not require any form of pose supervision -- neither for training, nor for inference.
+          Instead, the model learns a latent pose space through self supervision by taking a peek at the target view during training.
+
+    <section class="section" id="abstract">
+      <h2 class="title">Abstract</h2>
+          Inferring the structure of 3D scenes from 2D observations is a fundamental challenge in computer vision. Recently
+          popularized approaches based on neural scene representations have achieved tremendous impact and have been applied
+          across a variety of applications. One of the major remaining challenges in this space is training a single model which
+          can provide latent representations which effectively generalize beyond a single scene. Scene Representation Transformer
+          (SRT) has shown promise in this direction, but scaling it to a larger set of diverse scenes is challenging and
+          necessitates accurately posed ground truth data. To address this problem, we propose RUST (Really Unposed Scene
+          representation Transformer), a pose-free approach to novel view synthesis trained on RGB images alone. Our main insight
+          is that one can train a Pose Encoder that peeks at the target image and learns a latent pose embedding which is used by
+          the decoder for view synthesis. We perform an empirical investigation into the learned latent pose structure and show
+          that it allows meaningful test-time camera transformations and accurate explicit pose readouts. Perhaps surprisingly,
+          RUST achieves similar quality as methods which have access to perfect camera pose, thereby unlocking the potential for
+          large-scale training of amortized neural scene representations.
+    </section>
+
+    <section class="section">
+      <h2 class="title">Examples and Visualizations</h2>
+                <span>
+                    <a target="_blank" rel="noopener noreferrer" href="pages/pca_msn.html">PCA Analysis (MSN dataset)</a> <br/>
+                    <a target="_blank" rel="noopener noreferrer" href="pages/pca_sv.html">PCA Analysis (MSN streetview)</a> <br/>
+                    <a target="_blank" rel="noopener noreferrer" href="pages/vids_msn.html">Video results (MSN dataset)</a> <br/>
+                    <a target="_blank" rel="noopener noreferrer" href="pages/vids_msn_ablation.html">Video results RUST p-64 and p-768 (MSN dataset)</a> <br/>
+                    <a target="_blank" rel="noopener noreferrer" href="pages/vids_sv.html">Video results (SV dataset)</a> <br/>
+                    <a target="_blank" rel="noopener noreferrer" href="pages/vids_gnerf.html">Video results (GNerf baseline)</a>
+                </span>
+    </section>
+
+    <section class="section">
+      <h2 class="title">Dataset</h2>
+
+          Our dataset is identical to the one used in Object Scene Representation Transformer (OSRT).
+          Please see the <a target="_blank" rel="noopener noreferrer" href="https://osrt-paper.github.io/#dataset">OSRT project website</a> for details.
+
+    </section>
+
+    <section class="section">
+      <h2 class="title">Reference</h2>
+      <div class="column has-text-left"> 
+          <pre>
+  @article{sajjadi2022rust,
+    author = {
+      Sajjadi, Mehdi S. M.
+      and Mahendran, Aravindh
+      and Kipf, Thomas
+      and Pot, Etienne
+      and Duckworth, Daniel
+      and Lu{\v{c}}i{\'c}, Mario
+      and Greff, Klaus
+    },
+    title = {{RUST: Latent Neural Scene Representations from Unposed Imagery}},
+    journal = {CoRR},
+    volume = {abs/2211.14306},
+    year = {2022},
+  }
+          </pre>
+    </div>
+    </section>
+    <section class="section">
+      <h2 class="title">Related Projects</h2>
+
+            <a target="_blank" rel="noopener noreferrer" href="https://srt-paper.github.io/">Scene Representation Transformer (SRT)</a> <br/>
+            <a target="_blank" rel="noopener noreferrer" href="https://osrt-paper.github.io/">Object Scene Representation Transformer (OSRT)</a>
+    </section>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+  </body>
+</html>

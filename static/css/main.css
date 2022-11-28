@@ -1,0 +1,9 @@
+@import "bulma.min.css";
+@import "fontawesome.all.min.css";
+@import url("https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css");
+
+/* https://github.com/jgthms/bulma/issues/1513 */
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}

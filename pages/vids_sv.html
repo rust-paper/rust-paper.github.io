@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="." />
+    <meta name="keywords" content="RUST" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RUST: Supplementary material</title>
+
+    <link rel="stylesheet" href="../static/css/main.css" />
+
+    <script defer src="../static/js/fontawesome.all.min.js"></script>
+    <script src="../static/js/jquery-3.6.1.min.js"></script>
+    <script src="../static/js/handlebars-v4.7.7.js"></script>
+    <script src="../static/js/main.js"></script>
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3" id="sv-vids">Videos (StreetView)</h2>
+
+            <p>
+              Camera movement induced by traversals in latent pose space. Chery
+              picked examples.
+            </p>
+
+            <br />
+
+            <table class="table center">
+              <tbody id="sv-tbody">
+                <script id="sv-row" type="text/x-handlebars-template">
+                  <thead>
+                    <tr>
+                      <!-- <td></td> -->
+                      {{#each directions}}
+                      <td>{{this.human}}</td>
+                      {{/each}}
+                    </tr>
+                  </thead>
+
+                  {{#each examples}}
+                  <tr>
+                    {{#each @root.directions}}
+                    <td>
+                      <video autoplay loop controls muted>
+                          <source src="../data/sv_traversals/sv_{{this.short}}_{{../this}}.mp4" type="video/mp4">
+                      </video>
+                    </td>
+                    {{/each}}
+                  </tr>
+                  {{/each}}
+                </script>
+                <script>
+                  fillTemplate({
+                    templateId: "sv-row",
+                    dstId: "sv-tbody",
+                    data: {
+                      directions: [
+                        { short: "forward", human: "Forward" },
+                        { short: "pitch", human: "Pitch" },
+                        { short: "roll", human: "Roll" },
+                      ],
+                      examples: [
+                        "6.4",
+                        "11.0",
+                        "13.1",
+                        "14.6",
+                        "20.3",
+                        "21.1",
+                        "24.6",
+                        "30.7",
+                        "33.2",
+                      ],
+                    },
+                  });
+                </script>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3" id="sv-vids2">Videos (StreetView; non-cherry-picked)</h2>
+
+            <p>
+              Camera movement induced by traversals in latent pose space. Completely random selection of unseen examples.
+            </p>
+
+            <br />
+
+            <table class="table center">
+              <tbody id="sv2-tbody">
+              <script id="sv2-row" type="text/x-handlebars-template">
+                <thead>
+                <tr>
+                  <!-- <td></td> -->
+                  {{#each directions}}
+                  <td>{{this.human}}</td>
+                  {{/each}}
+                </tr>
+                </thead>
+
+                {{#each examples}}
+                <tr>
+                  {{#each @root.directions}}
+                  <td>
+                    <video autoplay loop controls muted>
+                      <source src="../data/sv_traversals/sv_random_{{this.short}}_{{../this}}.mp4" type="video/mp4">
+                    </video>
+                  </td>
+                  {{/each}}
+                </tr>
+                {{/each}}
+              </script>
+              <script>
+                fillTemplate({
+                  templateId: "sv2-row",
+                  dstId: "sv2-tbody",
+                  data: {
+                    directions: [
+                      { short: "forward", human: "Forward" },
+                      { short: "pitch", human: "Pitch" },
+                      { short: "roll", human: "Roll" },
+                    ],
+                    examples: [
+                      "39.7",
+                      "38.4",
+                      "35.7",
+                      "29.0",
+                      "27.5",
+                      "13.1",
+
+                      "9.6",
+                      "7.6",
+                      "6.5",
+                    ],
+                  },
+                });
+              </script>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
