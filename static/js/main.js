@@ -40,7 +40,10 @@ function _makeHeader() {
                         <p class="is-size-7 text-center">
                         <sup>*</sup>Correspondence to: <a href = "mailto: rust@msajjadi.com">rust@msajjadi.com</a>
                         </p>
-
+                        <br/>
+                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2211.14306">
+                          <button class="button is-link is-light is-responsive">Paper</button>
+                        </a>
                     </div>
                 </div>
             </div>
