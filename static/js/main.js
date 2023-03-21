@@ -42,7 +42,7 @@ function _makeHeader() {
                         </p>
                         <!-- CVPR -->
                         <p class="is-size-5 text-center">
-                        <sup>*</sup>CVPR 2023</a>
+                        CVPR 2023
                         </p>
                         <br/>
                         <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2211.14306">
